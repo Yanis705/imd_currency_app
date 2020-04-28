@@ -38,6 +38,17 @@ p {
   font-weight: 500;
 }
 
+.link {
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .p--min {
   color: #C73A40;
 }
@@ -419,5 +430,10 @@ input[type='file']::-webkit-file-upload-button {
 
 input[type='file'] {
   padding: 0;
+}
+
+.completed {
+  text-align: center;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

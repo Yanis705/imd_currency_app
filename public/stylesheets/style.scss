@@ -44,6 +44,13 @@ p {
   font-weight: 500;
 }
 
+.link{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
 .p--min {
   color: $red;
 }
@@ -365,4 +372,9 @@ input[type='file']::-webkit-file-upload-button{
 
 input[type='file']{
   padding: 0;
+}
+
+.completed{
+  text-align: center;
+  margin-top: 20px;
 }
