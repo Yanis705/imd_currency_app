@@ -47,20 +47,22 @@ const create = (req, res) => {
 }
 
 const getOne = (req, res) => {
-    if(err){
-        res.json({
-            "status": "error",
-            "message": "could get the transfer"
-        })
-    }
-    if(!err){
-        res.json({
-            "status": "success",
-            "data": {
-                "transfer": []
-            }
-        })
-    }
+    Message.find({_id: req.params.id}, (err, doc) =>{
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "could get the transfer"
+            })
+        }
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": {
+                    "transfer": doc
+                }
+            })
+        }
+    })
 }
 
 module.exports.getAll = getAll
