@@ -1,5 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.header
+    div.profilePic
+      a(class='profile' href='profile')
+        img(src="")
+    div.leaderBoardIcon
+      a(class='leader' href='leaderboard')
+        img(src="")
+    p Jane Doe
+  
+  div.block
+    h1 TRANSACTION COMPLETED
+    a(class='btn' href='/') BACK TO DASHBOARD
+  a(class='link' href='newTransaction') NEW TRANSACTION
