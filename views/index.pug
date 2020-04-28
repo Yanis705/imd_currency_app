@@ -1,5 +1,47 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.header
+    div.profilePic
+      a(class='profile' href='#')
+        img(src="")
+    div.leaderBoardIcon
+      a(class='leader' href='leaderboard')
+        img(src="")
+    p Jane Doe
+  div.current
+    p CURRENT BALANCE
+    p $100
+    a(class='btn' href='newTransaction')
+  div.minHistory
+    div.oneHistory
+      p 25/03
+      p Amber Waltens
+      p Feedback
+      p $10
+    div.oneHistory
+      p 22/03
+      p Amber Waltens
+      p Desing help
+      p -$15
+    div.oneHistory
+      p 20/03
+      p Yanis Maesschalck
+      p Feedback
+      p $10
+    div.oneHistory
+      p 14/03
+      p Yanis Maesschalck
+      p Desing help
+      p -$15
+    div.oneHistory
+      p 13/03
+      p Amber Waltens
+      p Desing help
+      p -$15
+    div.oneHistory
+      p 10/03
+      p Yanis Maesschalck
+      p Desing help
+      p -$15
+    a(class='btn' href='transactionHistory') FULL HISTORY
