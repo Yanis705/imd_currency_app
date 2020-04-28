@@ -2,22 +2,41 @@ const express = require('express');
 const router = express.Router();
 
 /* /api/v1/index */
-router.get('/api/v1', (req, res) => {
+router.get('/transfers', (req, res) => {
     res.json({
         "status": "success",
         "data": {
-            "Message": "Welcome to the IMDollar API!"
+            "Message": "get all transfers"
         }
     })
 });
 
-router.post('/api/v1', (req, res) => {
+router.post('/transfers', (req, res) => {
     res.json({
         "status": "success",
         "data": {
-            "Message": "Welcome to the IMDollar API!"
+            "Message": "post new transfer"
         }
     })
 });
+
+router.get('/transfers/:id', (req, res) => {
+    res.json({
+        "status": "success",
+        "data": {
+            "Message": "get transfer with id: " + req.params.id
+        }
+    })
+});
+
+router.get('/leaderboard', (req, res) => {
+    res.json({
+        "status": "success",
+        "data": {
+            "Message": "Get leaderboard"
+        }
+    })
+});
+
 
 module.exports = router;
