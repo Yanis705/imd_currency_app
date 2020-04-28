@@ -6,6 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'IMDollar | Home' });
 });
 
+router.get('/profile', function(req, res, next) {
+  res.render('profile', { title: 'IMDollar | Profile' });
+});
+
 router.get('/newtransaction', function(req, res, next) {
   res.render('newTransaction', { title: 'IMDollar | New transaction' });
 });
