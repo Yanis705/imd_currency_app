@@ -1,16 +1,13 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const transferSchema = new Schema({
-    from: String,
-    to: String,
-    IMDollars: Number,
-    reason: String,
-    message: String
-})
-const Transfer = mongoose.model('Transfer', transferSchema)
+const Transfer = require('../../../models/Transfer')
 
 const getAll = (req, res) => {
     Transfer.find({}, (err, docs)=>{
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "could get all the transfers"
+            })
+        }
         if(!err){
             res.json({
                 "status": "success",
@@ -24,12 +21,19 @@ const getAll = (req, res) => {
 
 const create = (req, res) => {
     let transfer = new Transfer()
-    transfer.from = "Amber"
-    transfer.to = "Yanis"
-    transfer.IMDollars = 10
-    transfer.reason = "feedback"
-    transfer.message = "thanks for the tips!"
+    transfer.from = req.body.from
+    transfer.to = req.body.to
+    transfer.IMDollars = req.body.IMDollars
+    transfer.reason = req.body.reason
+    transfer.message = req.body.message
     transfer.save((err, doc) =>{
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "could not create this transfer"
+            })
+        }
+
         if(!err){
             res.json({
                 "status": "success",
@@ -43,12 +47,20 @@ const create = (req, res) => {
 }
 
 const getOne = (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "transfer": []
-        }
-    })
+    if(err){
+        res.json({
+            "status": "error",
+            "message": "could get the transfer"
+        })
+    }
+    if(!err){
+        res.json({
+            "status": "success",
+            "data": {
+                "transfer": []
+            }
+        })
+    }
 }
 
 module.exports.getAll = getAll
