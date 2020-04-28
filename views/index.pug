@@ -2,46 +2,56 @@ extends layout
 
 block content
   div.header
-    div.profilePic
-      a(class='profile' href='profile')
-        img(src="")
-    div.leaderBoardIcon
-      a(class='leader' href='leaderboard')
-        img(src="")
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
     p Jane Doe
-  div.current
+  div.currentBalance
     h1 CURRENT BALANCE
-    p $100
+    p.currentBalance $100
     a(class='btn' href='newTransaction') NEW TRANSACTION
-  div.minHistory
-    div.oneHistory
-      p 25/03
-      p Amber Waltens
-      p Feedback
-      p $10
-    div.oneHistory
-      p 22/03
-      p Amber Waltens
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 20/03
-      p Yanis Maesschalck
-      p Feedback
-      p $10
-    div.oneHistory
-      p 14/03
-      p Yanis Maesschalck
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 13/03
-      p Amber Waltens
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 10/03
-      p Yanis Maesschalck
-      p Desing help
-      p -$15
+
+  div.transactionHistory
+    div.item
+      div.date
+        p.p--day 25
+        p 04
+      div.info
+        p Yanis Maesschalck
+        p.p--reason Desing help
+      div.amount
+        p.p--plus -$15
+
+    div.item
+      div.date
+        p.p--day 25
+        p 04
+      div.info
+        p Yanis Maesschalck
+        p.p--reason Desing help
+      div.amount
+        p.p--plus -$15
+
+    div.item
+      div.date
+        p.p--day 25
+        p 04
+      div.info
+        p Yanis Maesschalck
+        p.p--reason Desing help
+      div.amount
+        p.p--plus -$15
+
+    div.item
+      div.date
+        p.p--day 25
+        p 04
+      div.info
+        p Yanis Maesschalck
+        p.p--reason Desing help
+      div.amount
+        p.p--plus -$15
+
+      
     a(class='btn' href='transactionHistory') FULL HISTORY

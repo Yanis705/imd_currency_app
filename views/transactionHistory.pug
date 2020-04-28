@@ -2,75 +2,61 @@ extends layout
 
 block content
   div.header
-    div.profilePic
-      a(class='profile' href='profile')
-        img(src="")
-    div.leaderBoardIcon
-      a(class='leader' href='leaderboard')
-        img(src="")
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
     p Jane Doe
-  div.fullHistory
+
+  div.wrapper
     div.closeHeader
-      h1 ALL TRANSACTIONS 
+      h1 all transactions
       a(class='close' href="/")
-        p x
-    div.oneHistory
-      p 25/03
-      p Amber Waltens
-      p Feedback
-      p $10
-    div.oneHistory
-      p 22/03
-      p Amber Waltens
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 20/03
-      p Yanis Maesschalck
-      p Feedback
-      p $10
-    div.oneHistory
-      p 14/03
-      p Yanis Maesschalck
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 13/03
-      p Amber Waltens
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 10/03
-      p Yanis Maesschalck
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 09/03
-      p Amber Waltens
-      p Feedback
-      p $10
-    div.oneHistory
-      p 07/03
-      p Amber Waltens
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 06/03
-      p Yanis Maesschalck
-      p Feedback
-      p $10
-    div.oneHistory
-      p 14/02
-      p Yanis Maesschalck
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 13/02
-      p Amber Waltens
-      p Desing help
-      p -$15
-    div.oneHistory
-      p 10/02
-      p Yanis Maesschalck
-      p Desing help
-      p -$15
+        div.stripe
+        div.stripe
+        
+    div.transactionHistory
+      
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15
+
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15
+
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15
+
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15
