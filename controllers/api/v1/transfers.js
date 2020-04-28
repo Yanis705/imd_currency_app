@@ -47,7 +47,7 @@ const create = (req, res) => {
 }
 
 const getOne = (req, res) => {
-    Message.find({_id: req.params.id}, (err, doc) =>{
+    Transfer.find({_id: req.params.id}, (err, doc) =>{
         if(err){
             res.json({
                 "status": "error",
