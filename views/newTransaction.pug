@@ -2,33 +2,33 @@ extends layout
 
 block content
   div.header
-    div.profilePic
-      a(class='profile' href='profile')
-        img(src="")
-    div.leaderBoardIcon
-      a(class='leader' href='leaderboard')
-        img(src="")
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
     p Jane Doe
   
-  div.closeHeader
-    h1 NEW TRANSACTION
-    a(class='close' href="/")
-      p x
+  div.wrapper
+    div.closeHeader
+      h1 NEW TRANSACTION
+      a(class='close' href="/")
+        div.stripe
+        div.stripe
 
-  form(method='POST' action='/newTransaction')
-    div.form-group
-      label(for='to') Transaction to:
-      input#to.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='to')
-    div.form-group
-      label(for='amount') Amount of IMDollars:
-      input#email.form-control(type='number', placeholder='5' name='amount')
-    div.form-group
-      label(for='reason') Reason for transaction:
-      select(name='dropDown', id='')
-        each val in ['Design help' , 'Development help' , 'Feedback', 'Meeting deadlines', 'Other']
-          option=val
-    div.form-group
-      label(for='message') Leave a message:
-      input#email.form-control(type='text', placeholder='Write a message' name='message')
-    a(class='btn' href='transactionCompleted') CONFIRM TRANSACTION
+    form(method='POST' action='/newTransaction')
+      div.form__group
+        label(for='to') Transaction to:
+        input#to.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='to')
+      div.form__group
+        label(for='amount') Amount of IMDollars:
+        input#email.form-control(type='number', placeholder='5' name='amount')
+      div.form__group
+        label(for='reason') Reason for transaction:
+        select(name='dropDown', id='')
+          each val in ['Design help' , 'Development help' , 'Feedback', 'Meeting deadlines', 'Other']
+            option=val
+      div.form__group
+        label(for='message') Leave a message:
+        input#email.form-control(type='text', placeholder='Write a message' name='message')
+      button(class='btn' href='transactionCompleted') confirm transaction
 
