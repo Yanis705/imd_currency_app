@@ -1,5 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  H1 IMDOLLAR
+  p The currency to reward your fellow students for their help
+  // sign in form
+  form(method='POST' action='/signin')
+    h3 LOGIN TO YOUR ACCOUNT
+    div.form-group
+      label(for='email') School e-mail:
+      input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
+    div.form-group
+      label(for='password') Password:
+      input#pw.form-control(type='password' name='password')
+    button.btn.btn-primary(type='submit') SIGN IN
+  a(class='link' href='register.pug') New here?
