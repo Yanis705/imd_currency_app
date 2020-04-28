@@ -1,22 +1,23 @@
 extends layout
 
 block content
-  H1 IMDOLLAR
-  p The currency to reward your fellow students for their help
-  // register form
-  form(method='POST' action='/register')
-    h2 REGISTER AN ACCOUNT
-    div.form-group
-      label(for='email') School e-mail:
-      input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
-    div.form-group
-      label(for='firstName') First Name:
-      input#firstName.form-control(type='text', placeholder='first name' name='firstName')
-    div.form-group
-      label(for='lastName') Last Name:
-      input#lastName.form-control(type='text', placeholder='last name' name='lastName')
-    div.form-group
-      label(for='password') Password:
-      input#pw.form-control(type='password' name='password')
-    button.btn.btn-primary(type='submit') SIGN UP
-  a(class='link' href='login') Already have an account?
+  div.login
+    H1.name IMDOLLAR
+    p The currency to reward your fellow students for their help
+    // register form
+    form(method='POST' action='/register')
+      h1 REGISTER AN ACCOUNT
+      div.form__group
+        label(for='email') School e-mail:
+        input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
+      div.form__group
+        label(for='firstName') First Name:
+        input#firstName.form-control(type='text', placeholder='first name' name='firstName')
+      div.form__group
+        label(for='lastName') Last Name:
+        input#lastName.form-control(type='text', placeholder='last name' name='lastName')
+      div.form__group
+        label(for='password') Password:
+        input#pw.form-control(type='password' placeholder='Password' name='password')
+      button.btn.btn-primary(type='submit') sign up
+    a(class='link' href='login') Already have an account?
