@@ -1,29 +1,30 @@
 extends layout
 
 block content
-    div.header
-        div.profilePic
-        a(class='profile' href='#')
-            img(src="")
-        div.leaderBoardIcon
-        a(class='leader' href='leaderboard')
-            img(src="")
-        p Jane Doe
+  div.header
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
+    p Jane Doe
+
+  div.wrapper
     div.closeHeader
-        h1 PROFILE
-        a(class='close' href="/")
-          p x
+      h1 all transactions
+      a(class='close' href="/")
+        div.stripe
+        div.stripe
+
     // change profile information form
     form(method='POST' action='/signin')
-        h1 CHANGE PROFILE PICTURE
-        div.form-group
+        h2 CHANGE PROFILE PICTURE
+        div.form__group--profile
             label(for='picture') Upload picture:
-            input#picture.form-control(type='file' placeholder="pick file" name='picture')
-        h1 CHANGE PASSWORD
-        div.form-group
+            input(type='file' placeholder="pick file" name='picture')
+        h2 CHANGE PASSWORD
+        div.form__group--profile
             label(for='oldPassword') Old password:
-            input#pw.form-control(type='password' name='oldPassword')
+            input(type='password' name='oldPassword')
             label(for='newPassword') New password:
-            input#pw.form-control(type='password' name='newPassword')
-        button.btn.btn-primary(type='submit') SAFE CHANGES
-    a(class='link' href='register') New here?
+            input(type='password' name='newPassword')
+        button.btn.btn-primary(type='submit') Save changes

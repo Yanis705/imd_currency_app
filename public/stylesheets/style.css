@@ -19,6 +19,16 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+h2:first-of-type {
+  padding-bottom: 15px;
+}
+
 a {
   text-decoration: none;
 }
@@ -60,23 +70,23 @@ input::placeholder {
   color: #6A6A6C;
 }
 
-.form__group {
+.form__group, .form__group--profile {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-.form__group label {
+.form__group label, .form__group--profile label {
   margin-bottom: 5px;
   display: block;
 }
 
-.form__group:first-of-type {
+.form__group:first-of-type, .form__group--profile:first-of-type {
   padding-top: 0;
 }
 
-.form__group:last-of-type {
+.form__group:last-of-type, .form__group--profile:last-of-type {
   margin-bottom: 50px;
   padding-bottom: 0;
 }
@@ -393,5 +403,21 @@ select {
   bottom: 0;
   border: 2px solid white;
   border-top: 2px solid #202124 !important;
+}
+
+.form__group--profile {
+  margin-bottom: 30px;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  height: 35px;
+  margin: 0;
+  background-color: #C73A40;
+  border: none;
+  color: white;
+}
+
+input[type='file'] {
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */
