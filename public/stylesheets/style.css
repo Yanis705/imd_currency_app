@@ -19,6 +19,16 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+h2:first-of-type {
+  padding-bottom: 15px;
+}
+
 a {
   text-decoration: none;
 }
@@ -26,6 +36,17 @@ a {
 p {
   font-size: 16px;
   font-weight: 500;
+}
+
+.link {
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .p--min {
@@ -60,23 +81,23 @@ input::placeholder {
   color: #6A6A6C;
 }
 
-.form__group {
+.form__group, .form__group--profile {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-.form__group label {
+.form__group label, .form__group--profile label {
   margin-bottom: 5px;
   display: block;
 }
 
-.form__group:first-of-type {
+.form__group:first-of-type, .form__group--profile:first-of-type {
   padding-top: 0;
 }
 
-.form__group:last-of-type {
+.form__group:last-of-type, .form__group--profile:last-of-type {
   margin-bottom: 50px;
   padding-bottom: 0;
 }
@@ -109,7 +130,7 @@ select {
   font-weight: 400;
 }
 
-.wrapper, .currentBalance, .transactionHistory {
+.wrapper, .currentBalance, .transactionHistory, .leaderboard {
   background-color: #323438;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -281,22 +302,22 @@ select {
   margin-bottom: 50px;
 }
 
-.transactionHistory {
+.transactionHistory, .leaderboard {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.transactionHistory a {
+.transactionHistory a, .leaderboard a {
   border-bottom: 2px solid #202124;
 }
 
-.transactionHistory a:last-of-type {
+.transactionHistory a:last-of-type, .leaderboard a:last-of-type {
   border: none;
 }
 
-.transactionHistory .item {
+.transactionHistory .item, .leaderboard .item {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -313,7 +334,7 @@ select {
           box-sizing: content-box;
 }
 
-.transactionHistory .item .date {
+.transactionHistory .item .date, .leaderboard .item .date, .transactionHistory .item .leaderboard .place, .leaderboard .item .place {
   background-color: #202124;
   border-radius: 50%;
   width: 75px;
@@ -333,12 +354,12 @@ select {
   padding-top: 7px;
 }
 
-.transactionHistory .item .date .p--day {
+.transactionHistory .item .date .p--day, .leaderboard .item .date .p--day, .transactionHistory .item .leaderboard .place .p--day, .leaderboard .item .place .p--day {
   font-size: 20px;
   line-height: .8;
 }
 
-.transactionHistory .item .info {
+.transactionHistory .item .info, .leaderboard .item .info {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -352,15 +373,15 @@ select {
           justify-content: center;
 }
 
-.transactionHistory .item .info p {
+.transactionHistory .item .info p, .leaderboard .item .info p {
   font-weight: 400;
 }
 
-.transactionHistory .item .info .p--reason {
+.transactionHistory .item .info .p--reason, .leaderboard .item .info .p--reason, .transactionHistory .item .info .leaderboard .p--amountTransactions, .leaderboard .item .info .p--amountTransactions {
   font-size: 14px;
 }
 
-.transactionHistory .item .amount {
+.transactionHistory .item .amount, .leaderboard .item .amount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,7 +395,45 @@ select {
   padding-right: 20px;
 }
 
-.transactionHistory .item:last-of-type {
+.transactionHistory .item:last-of-type, .leaderboard .item:last-of-type {
   border: none;
+}
+
+.leaderboard .item {
+  border-bottom: 2px solid #202124;
+}
+
+.myPlace {
+  position: fixed;
+  width: 100%;
+  margin-left: -50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #323438;
+  bottom: 0;
+  border: 2px solid white;
+  border-top: 2px solid #202124 !important;
+}
+
+.form__group--profile {
+  margin-bottom: 30px;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  height: 35px;
+  margin: 0;
+  background-color: #C73A40;
+  border: none;
+  color: white;
+}
+
+input[type='file'] {
+  padding: 0;
+}
+
+.completed {
+  text-align: center;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -2,45 +2,98 @@ extends layout
 
 block content
   div.header
-    div.profilePic
-      a(class='profile' href='profile')
-        img(src="")
-    div.leaderBoardIcon
-      a(class='leader' href='#')
-        img(src="")
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
     p Jane Doe
-  div.Leaderboard
+
+  div.wrapper
     div.closeHeader
-      h1 LEADERBOARD
+      h1 Leaderboard
       a(class='close' href="/")
-        p x
-    div.onePlace
-      p #1
-      p Amber Waltens
-      p 1596 transactions
-      p $11212
-    div.onePlace
-      p #2
-      p Amber Waltens
-      p 1596 transactions
-      p $11212
-    div.onePlace
-      p #3
-      p Amber Waltens
-      p 1596 transactions
-      p $11212
-    div.onePlace
-      p #4
-      p Amber Waltens
-      p 1596 transactions
-      p $11212
-    div.onePlace
-      p #5
-      p Amber Waltens
-      p 1596 transactions
-      p $11212
-  div.myPlace
-    p #16
-    p Jane Doe
-    p 1500 transactions
-    p $11000
+        div.stripe
+        div.stripe
+
+    div.leaderboard
+
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+      
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+            
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+
+      div.item
+          div.place
+            p #1
+          div.info
+            p Yanis Maesschalck
+            p.p--amountTransactions 243 transactions
+          div.amount
+            p.p--plus $1260
+            
+      div.item.myPlace
+            div.place
+              p #1
+            div.info
+              p Yanis Maesschalck
+              p.p--amountTransactions 243 transactions
+            div.amount
+              p.p--plus $1260
