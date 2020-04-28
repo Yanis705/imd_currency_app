@@ -22,6 +22,7 @@ h1 {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 50px;
+  text-transform: uppercase;
 }
 
 a {
@@ -246,9 +247,17 @@ select {
   }
 }
 
-.latestHistory {
+.transactionHistory {
   @extend %section;
   flex-direction: column;
+
+  a{
+    border-bottom: 2px solid $darkest;
+  }
+
+  a:last-of-type{
+    border: none;
+  }
 
   .item {
     flex-direction: row;
@@ -259,7 +268,6 @@ select {
     padding-top: 10px;
     padding-bottom: 10px;
     box-sizing: content-box;
-    border-bottom: 2px solid $darkest;
 
     .date {
       background-color: $darkest;

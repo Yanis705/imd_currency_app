@@ -16,6 +16,7 @@ h1 {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 50px;
+  text-transform: uppercase;
 }
 
 a {
@@ -108,7 +109,7 @@ select {
   font-weight: 400;
 }
 
-.wrapper, .currentBalance, .latestHistory {
+.wrapper, .currentBalance, .transactionHistory {
   background-color: #323438;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -280,14 +281,22 @@ select {
   margin-bottom: 50px;
 }
 
-.latestHistory {
+.transactionHistory {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.latestHistory .item {
+.transactionHistory a {
+  border-bottom: 2px solid #202124;
+}
+
+.transactionHistory a:last-of-type {
+  border: none;
+}
+
+.transactionHistory .item {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -302,10 +311,9 @@ select {
   padding-bottom: 10px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  border-bottom: 2px solid #202124;
 }
 
-.latestHistory .item .date {
+.transactionHistory .item .date {
   background-color: #202124;
   border-radius: 50%;
   width: 75px;
@@ -325,12 +333,12 @@ select {
   padding-top: 7px;
 }
 
-.latestHistory .item .date .p--day {
+.transactionHistory .item .date .p--day {
   font-size: 20px;
   line-height: .8;
 }
 
-.latestHistory .item .info {
+.transactionHistory .item .info {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -344,15 +352,15 @@ select {
           justify-content: center;
 }
 
-.latestHistory .item .info p {
+.transactionHistory .item .info p {
   font-weight: 400;
 }
 
-.latestHistory .item .info .p--reason {
+.transactionHistory .item .info .p--reason {
   font-size: 14px;
 }
 
-.latestHistory .item .amount {
+.transactionHistory .item .amount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -366,7 +374,7 @@ select {
   padding-right: 20px;
 }
 
-.latestHistory .item:last-of-type {
+.transactionHistory .item:last-of-type {
   border: none;
 }
 /*# sourceMappingURL=style.css.map */
