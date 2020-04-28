@@ -11,7 +11,7 @@ $green : #139F2A;
   margin: 0;
 }
 
-// Algemene styling 
+//-----------------Global Styles-----------------//
 
 body {
   padding: 50px;
@@ -22,7 +22,6 @@ h1{
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 50px;
-  padding-left: 20px;
 }
 
 a{
@@ -32,6 +31,14 @@ a{
 p{
   font-size: 16px;
   font-weight: 500;
+}
+
+.p--min{
+  color: $red;
+}
+
+.p--plus{
+  color: $green;
 }
 
 input{
@@ -71,16 +78,68 @@ input::placeholder {
   background-color: $red;
   border: none;
   width: 100%;
-  height: 50px;
   text-transform: uppercase;
   color: white;
   font-size: 18px;
   border-radius: 0 0 10px 10px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 400;
 }
 
-// Login
+%section{
+  background-color: $lighter;
+  display: flex;
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 30px;
+}
 
-.login{
+//-----------------Header-----------------//
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .header__profilePicture{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    img{
+      width: 100px;
+    }
+  }
+
+  .header__leaderBoardIcon{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    margin-right: -60px;
+
+    img{
+      width: 20px;
+    }
+  }
+
+  p{
+    margin-top: 15px;
+    font-weight: 400;
+  }
+}
+
+
+//-----------------Login and register-----------------//
+
+.startForm{
   text-align: center;
   max-width: 500px;
   margin-left: auto;
@@ -108,4 +167,90 @@ input::placeholder {
     margin-top: 30px;
   }
 
+  h1{
+    padding-left: 20px;
+  }
+
+}
+
+//-----------------Home-----------------//
+
+.currentBalance{
+  @extend %section;
+  flex-direction: column;
+  align-items: center;
+  
+  h1{
+    margin: 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+
+  p{
+    margin: 0;
+    padding-bottom: 0;
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+}
+
+.latestHistory{
+  @extend %section;
+  flex-direction: column;
+
+  .item{
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 100px auto 30%;
+    height: 75px;
+    justify-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: content-box;
+    border-bottom: 2px solid $darkest;
+
+    .date{
+      background-color: $darkest;
+      border-radius: 50%;
+      width: 75px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 7px;
+
+      .p--day{
+        font-size: 20px;
+        line-height: .8;
+      }
+    }
+
+    .info{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p{
+        font-weight: 400;
+      }
+
+      .p--reason{
+        font-size: 14px;
+      }
+    }
+
+    .amount{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+  }
+
+  .item:last-of-type{
+    border: none;
+  }
 }

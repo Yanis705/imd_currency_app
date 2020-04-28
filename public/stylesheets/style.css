@@ -16,7 +16,6 @@ h1 {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 50px;
-  padding-left: 20px;
 }
 
 a {
@@ -26,6 +25,14 @@ a {
 p {
   font-size: 16px;
   font-weight: 500;
+}
+
+.p--min {
+  color: #C73A40;
+}
+
+.p--plus {
+  color: #139F2A;
 }
 
 input {
@@ -77,14 +84,78 @@ input::placeholder {
   background-color: #C73A40;
   border: none;
   width: 100%;
-  height: 50px;
   text-transform: uppercase;
   color: white;
   font-size: 18px;
   border-radius: 0 0 10px 10px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 400;
 }
 
-.login {
+.currentBalance, .latestHistory {
+  background-color: #323438;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 30px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.header .header__profilePicture {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.header .header__profilePicture img {
+  width: 100px;
+}
+
+.header .header__leaderBoardIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -30px;
+  margin-right: -60px;
+}
+
+.header .header__leaderBoardIcon img {
+  width: 20px;
+}
+
+.header p {
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+.startForm {
   text-align: center;
   max-width: 500px;
   margin-left: auto;
@@ -98,14 +169,14 @@ input::placeholder {
           flex-direction: column;
 }
 
-.login .name {
+.startForm .name {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 0;
   padding-left: 0px;
 }
 
-.login form {
+.startForm form {
   background-color: #323438;
   border-radius: 10px 10px 0 0;
   text-align: left;
@@ -113,7 +184,125 @@ input::placeholder {
   margin-top: 50px;
 }
 
-.login a {
+.startForm a {
   margin-top: 30px;
+}
+
+.startForm h1 {
+  padding-left: 20px;
+}
+
+.currentBalance {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.currentBalance h1 {
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.currentBalance p {
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.latestHistory {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.latestHistory .item {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100px auto 30%;
+      grid-template-columns: 100px auto 30%;
+  height: 75px;
+  justify-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-bottom: 2px solid #202124;
+}
+
+.latestHistory .item .date {
+  background-color: #202124;
+  border-radius: 50%;
+  width: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 7px;
+}
+
+.latestHistory .item .date .p--day {
+  font-size: 20px;
+  line-height: .8;
+}
+
+.latestHistory .item .info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.latestHistory .item .info p {
+  font-weight: 400;
+}
+
+.latestHistory .item .info .p--reason {
+  font-size: 14px;
+}
+
+.latestHistory .item .amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.latestHistory .item:last-of-type {
+  border: none;
 }
 /*# sourceMappingURL=style.css.map */
