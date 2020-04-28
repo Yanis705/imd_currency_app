@@ -17,8 +17,8 @@ block content
     form(method='POST' action='/signin')
         h1 CHANGE PROFILE PICTURE
         div.form-group
-            label(for='email') Upload picture:
-            input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
+            label(for='picture') Upload picture:
+            input#picture.form-control(type='file' placeholder="pick file" name='picture')
         h1 CHANGE PASSWORD
         div.form-group
             label(for='oldPassword') Old password:
