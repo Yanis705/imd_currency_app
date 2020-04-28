@@ -2,7 +2,7 @@ const getAll = (req, res) => {
     res.json({
         "status": "success",
         "data": {
-            "Message": "get all transfers"
+            "transfers": []
         }
     })
 }
@@ -11,7 +11,13 @@ const create = (req, res) => {
     res.json({
         "status": "success",
         "data": {
-            "Message": "post new transfer"
+            "transfer": {
+                "from": "Amber",
+                "to": "Yanis",
+                "IMDollars": 10,
+                "reason": "feedback",
+                "message": "The design looks much better now, thanks!"
+            }
         }
     })
 }
@@ -20,7 +26,7 @@ const getOne = (req, res) => {
     res.json({
         "status": "success",
         "data": {
-            "Message": "get transfer with id: " + req.params.id
+            "transfer": []
         }
     })
 }
