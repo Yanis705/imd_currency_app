@@ -1,18 +1,22 @@
 extends layout
 
 block content
+  H1 IMDOLLAR
+  p The currency to reward your fellow students for their help
   // register form
   form(method='POST' action='/register')
+    h3 REGISTER AN ACCOUNT
     div.form-group
       label(for='email') School e-mail:
       input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
     div.form-group
-      label(for='firstName') First name:
+      label(for='firstName') First Name:
       input#firstName.form-control(type='text', placeholder='first name' name='firstName')
     div.form-group
-      label(for='lastName') Last name:
+      label(for='lastName') Last Name:
       input#lastName.form-control(type='text', placeholder='last name' name='lastName')
     div.form-group
       label(for='password') Password:
       input#pw.form-control(type='password' name='password')
     button.btn.btn-primary(type='submit') Sign up
+  a(class='link' href='login.pug') Already have an account?
