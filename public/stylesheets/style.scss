@@ -225,8 +225,6 @@ select {
 
 }
 
-//-----------------Home-----------------//
-
 .currentBalance {
   @extend %section;
   flex-direction: column;
@@ -251,11 +249,11 @@ select {
   @extend %section;
   flex-direction: column;
 
-  a{
+  a {
     border-bottom: 2px solid $darkest;
   }
 
-  a:last-of-type{
+  a:last-of-type {
     border: none;
   }
 
@@ -313,3 +311,34 @@ select {
     border: none;
   }
 }
+
+.leaderboard {
+  @extend .transactionHistory;
+
+  .place {
+    @extend .date;
+  }
+
+  .p--amountTransactions {
+    @extend .p--reason;
+  }
+
+  .item {
+    border-bottom: 2px solid $darkest;
+  }
+}
+
+
+.myPlace {
+  position: fixed;
+  width: 100%;
+  margin-left: -50px;
+  display: flex;
+  background-color: $lighter;
+  bottom: 0;
+  border: 2px solid white;
+  border-top: 2px solid $darkest !important;
+}
+
+
+
