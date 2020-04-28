@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 /* /api/v1/index */
-router.get('/', function (req, res, next) {
+router.get('/api/v1', (req, res) => {
     res.json({
         "status": "success",
         "data": {
@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
     })
 });
 
-router.post('/', function (req, res, next) {
+router.post('/api/v1', (req, res) => {
     res.json({
         "status": "success",
         "data": {
