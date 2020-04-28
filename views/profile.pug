@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    div.header
+        div.profilePic
+        a(class='profile' href='#')
+            img(src="")
+        div.leaderBoardIcon
+        a(class='leader' href='leaderboard')
+            img(src="")
+        p Jane Doe
+    div.closeHeader
+        p PROFILE
+        a(class='close' href="/")
+          p x
+    // change profile information form
+    form(method='POST' action='/signin')
+        h1 CHANGE PROFILE PICTURE
+        div.form-group
+            label(for='email') Upload picture:
+            input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
+        h1 CHANGE PASSWORD
+        div.form-group
+            label(for='oldPassword') Old password:
+            input#pw.form-control(type='password' name='oldPassword')
+            label(for='newPassword') New password:
+            input#pw.form-control(type='password' name='newPassword')
+        button.btn.btn-primary(type='submit') SAFE CHANGES
+    a(class='link' href='register') New here?
