@@ -1,14 +1,18 @@
-* {
+$darkest : #202124;
+$lighter : #323438;
+$red : #C73A40;
+$green : #139F2A;
+
+*{
   font-family: 'Poppins', sans-serif;
 }
 
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #C73A40;
+  background-color: $red;
 }
 
 a {
   color: #00B7FF;
 }
-/*# sourceMappingURL=style.css.map */
