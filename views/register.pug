@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  // register form
+  form(method='POST' action='/register')
+    div.form-group
+      label(for='email') School e-mail:
+      input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
+    div.form-group
+      label(for='firstName') First name:
+      input#firstName.form-control(type='text', placeholder='first name' name='firstName')
+    div.form-group
+      label(for='lastName') Last name:
+      input#lastName.form-control(type='text', placeholder='last name' name='lastName')
+    div.form-group
+      label(for='password') Password:
+      input#pw.form-control(type='password' name='password')
+    button.btn.btn-primary(type='submit') Sign up
