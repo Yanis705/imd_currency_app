@@ -1,23 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const transfersController= require('../../../controllers/api/v1/transfers')
+const leaderboardController= require('../../../controllers/api/v1/leaderboard')
 
 /* /api/v1/index */
-router.get('/', function (req, res, next) {
-    res.json({
-        "status": "success",
-        "data": {
-            "Message": "Welcome to the IMDollar API!"
-        }
-    })
-});
+router.get('/transfers', transfersController.getAll);
 
-router.post('/', function (req, res, next) {
-    res.json({
-        "status": "success",
-        "data": {
-            "Message": "Welcome to the IMDollar API!"
-        }
-    })
-});
+router.post('/transfers', transfersController.create);
+
+router.get('/transfers/:id', transfersController.getOne);
+
+router.get('/leaderboard', leaderboardController.getAll);
+
 
 module.exports = router;

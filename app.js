@@ -6,7 +6,13 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const apiimddollarRouter = require('./routes/api/v1/index');
+const apiImdollarRouter = require('./routes/api/v1/index');
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/imdollar', {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
+});
 
 const app = express();
 
@@ -22,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/v1/imdollar', apiimddollarRouter);
+app.use('/api/v1', apiImdollarRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
