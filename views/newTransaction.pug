@@ -18,10 +18,10 @@ block content
     form(method='POST' action='/newTransaction')
       div.form__group
         label(for='to') Transaction to:
-        input#to.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='to')
+        input#transactionTo(type='email', placeholder='r-number@student.thomasmore.be' name='to')
       div.form__group
         label(for='amount') Amount of IMDollars:
-        input#email.form-control(type='number', placeholder='5' name='amount')
+        input#amount(type='number', placeholder='5' name='amount')
       div.form__group
         label(for='reason') Reason for transaction:
         select(name='dropDown', id='')

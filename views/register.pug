@@ -9,15 +9,15 @@ block content
       h1 REGISTER AN ACCOUNT
       div.form__group
         label(for='email') School e-mail:
-        input#email.form-control(type='email', placeholder='r-number@student.thomasmore.be' name='email')
+        input#email(type='email', placeholder='r-number@student.thomasmore.be' name='email')
       div.form__group
         label(for='firstName') First Name:
-        input#firstName.form-control(type='text', placeholder='first name' name='firstName')
+        input#firstName(type='text', placeholder='first name' name='firstName')
       div.form__group
         label(for='lastName') Last Name:
-        input#lastName.form-control(type='text', placeholder='last name' name='lastName')
+        input#lastName(type='text', placeholder='last name' name='lastName')
       div.form__group
         label(for='password') Password:
-        input#pw.form-control(type='password' placeholder='Password' name='password')
-      button.btn.btn-primary(type='submit') sign up
+        input#pw(type='password' placeholder='Password' name='password')
+      button.btn(type='submit') sign up
     a(class='link' href='login') Already have an account?
