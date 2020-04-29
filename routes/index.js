@@ -22,6 +22,10 @@ router.get('/transactionhistory', function(req, res, next) {
   res.render('transactionHistory', { title: 'IMDollar | Transaction history' });
 });
 
+router.get('/transactionDetails', function(req, res, next) {
+  res.render('transactionDetails', { title: 'IMDollar | Transaction details' });
+});
+
 router.get('/leaderboard', function(req, res, next) {
   res.render('leaderboard', { title: 'IMDollar | Leaderboard' });
 });

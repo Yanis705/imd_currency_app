@@ -378,3 +378,20 @@ input[type='file']{
   text-align: center;
   margin-top: 20px;
 }
+
+.details{
+
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  .section{
+    border-bottom: 1px solid $darkest;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .item{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
