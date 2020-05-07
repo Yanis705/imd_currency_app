@@ -24,6 +24,7 @@ const create = (req, res) => {
     transfer.from = req.body.from
     transfer.to = req.body.to
     transfer.IMDollars = req.body.IMDollars
+    transfer.date = new Date().toLocaleDateString()
     transfer.reason = req.body.reason
     transfer.message = req.body.message
     transfer.save((err, doc) =>{
