@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const apiImdollarRouter = require('./routes/api/v1/index');
 
 const mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true)
 mongoose.connect('mongodb://localhost:27017/imdollar', {
   useNewUrlParser: true, 
   useUnifiedTopology: true

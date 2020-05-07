@@ -8,12 +8,6 @@ router.get('/', (req, res, next) => {
   res.send('respond with a resource');
 });
 
-router.post('/signup', (req, res, next)=>{
-  //signup
-  //username uit req
-  //password uit req
-  //brypt encrypt
-  //databank
-})
-
+router.post('/signup',authController.signup)
+//router.post('/login', authController.login)
 module.exports = router;
