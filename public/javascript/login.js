@@ -1,8 +1,8 @@
-document.querySelector(".signup").addEventListener('click', (e)=>{
+document.querySelector(".login").addEventListener('click', (e)=>{
     let email = document.querySelector('#email').value
     let password = document.querySelector('#pw').value
 
-    fetch("http://localhost:3000/users/signup", { 
+    fetch("http://localhost:3000/users/login", { 
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -15,11 +15,11 @@ document.querySelector(".signup").addEventListener('click', (e)=>{
         return response.json();
     }).then(json => {
         if (json.status === "success") {
-            //Redirect to index
-
             let token = json.data.token;
             localStorage.setItem("token", token);
             window.location = '/';
+        } else {
+            console.log("Can't login");
         }
     })
 

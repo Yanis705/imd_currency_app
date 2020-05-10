@@ -1,4 +1,4 @@
-const Transfer = require('../../../models/Transfer')
+const Transfer = require('../../../models/Transfer');
 
 const getAll = (req, res) => {
     Transfer.find({}, (err, docs)=>{
@@ -52,7 +52,7 @@ const getOne = (req, res) => {
         if(err){
             res.json({
                 "status": "error",
-                "message": "could get the transfer"
+                "message": "could not find a transfer with id " + req.params.id
             })
         }
         if(!err){
@@ -66,6 +66,6 @@ const getOne = (req, res) => {
     })
 }
 
-module.exports.getAll = getAll
+module.exports.getAll = getAll;
 module.exports.create = create
 module.exports.getOne = getOne

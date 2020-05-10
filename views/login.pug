@@ -9,9 +9,10 @@ block content
       h1 LOGIN TO YOUR ACCOUNT
       div.form__group
         label(for='email') School e-mail:
-        input(type='email', placeholder='r-number@student.thomasmore.be' name='email')
+        input#email(type='email', placeholder='r-number@student.thomasmore.be' name='email')
       div.form__group
         label(for='password') Password:
-        input(type='password' placeholder='Password' name='password')
-      button.btn(type='submit') sign in
+        input#pw(type='password' placeholder='Password' name='password')
+      button.btn.login(type='submit') sign in
     a(class='link' href='register') New here?
+  script(src='javascript/login.js')
