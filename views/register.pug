@@ -2,10 +2,11 @@ extends layout
 
 block content
   div.startForm
-    H1.name IMDOLLAR
+    h1.name IMDOLLAR
     p The currency to reward your fellow students for their help
+    p.alert
     // register form
-    form(method='POST' action='/register')
+    form.signup(method='POST')
       h1 REGISTER AN ACCOUNT
       div.form__group
         label(for='email') School e-mail:
@@ -18,6 +19,7 @@ block content
         input#lastName(type='text', placeholder='last name' name='lastName')
       div.form__group
         label(for='password') Password:
-        input#pw(type='password' placeholder='Password' name='password')
-      button.btn(type='submit') sign up
+        input#pw.form-control(type='password' placeholder='Password' name='password')
+      button.btn.btn-primary.signup(type='submit' name="submit" value='signup') sign up
     a(class='link' href='login') Already have an account?
+  script(src='../public/javascript/signup.js')

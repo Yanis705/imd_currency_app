@@ -34,7 +34,7 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'IMDollar | Login' });
 });
 
-router.get('/register', function(req, res, next) {
+router.get('/signup', function(req, res, next) {
   res.render('register', { title: 'IMDollar | Register' });
 });
 
