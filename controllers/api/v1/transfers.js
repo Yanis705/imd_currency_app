@@ -5,7 +5,7 @@ const getAll = (req, res) => {
         if(err){
             res.json({
                 "status": "error",
-                "message": "could get all the transfers"
+                "message": "couldn't get all the transfers"
             })
         }
         if(!err){
