@@ -20,11 +20,13 @@ block content
         h2 CHANGE PROFILE PICTURE
         div.form__group--profile
             label(for='picture') Upload picture:
-            input(type='file' placeholder="pick file" name='picture')
+            input#file(type='file' placeholder="pick file" name='picture')
         h2 CHANGE PASSWORD
         div.form__group--profile
             label(for='oldPassword') Old password:
-            input(type='password' name='oldPassword')
+            input#pwOld(type='password' name='oldPassword')
             label(for='newPassword') New password:
-            input(type='password' name='newPassword')
-        button.btn.btn-primary(type='submit') Save changes
+            input#pwNew(type='password' name='newPassword')
+        button.btn(type='submit') Save changes
+  a.logout(class='link' href='login') logout
+  script(src='javascript/profile.js')
