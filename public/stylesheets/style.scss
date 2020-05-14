@@ -16,7 +16,7 @@
 
 //-----------------Global Styles-----------------//
 
-body {
+body { 
   padding: 50px;
   background-color: $darkest;
 }
@@ -54,11 +54,11 @@ p {
   justify-content: center;
 }
 
-.p--min {
+.transaction__amount--negative {
   color: $red;
 }
 
-.p--plus {
+.transaction__amount--positive {
   color: $green;
 }
 
