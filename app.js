@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const config = require('config')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -11,7 +12,7 @@ const passport = require('./passport/passport');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true)
-mongoose.connect('mongodb://localhost:27017/imdollar', {
+mongoose.connect(config.get('Database.conn'), {
   useNewUrlParser: true, 
   useUnifiedTopology: true
 });
