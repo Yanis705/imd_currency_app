@@ -2,7 +2,7 @@ document.querySelector(".signup").addEventListener('click', (e)=>{
     let email = document.querySelector('#email').value
     let password = document.querySelector('#pw').value
 
-    fetch("/users/signup", { 
+    fetch("https://imdollar-webtech3.herokuapp.com/users/signup", { 
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
