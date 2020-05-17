@@ -55,23 +55,23 @@ const create = (req, res) => {
         }
     });
 
-    // transfer.save((err, doc) =>{
-    //     if(err){
-    //         res.json({
-    //             "status": "error",
-    //             "message": "could not create this transfer"
-    //         })
-    //     }
+    transfer.save((err, doc) =>{
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "could not create this transfer"
+            })
+        }
 
-    //     if(!err){
-    //         res.json({
-    //             "status": "success",
-    //             "data": {
-    //                 "transfer": doc
-    //             }
-    //         })
-    //     }
-    // })
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": {
+                    "transfer": doc
+                }
+            })
+        }
+    })
     
 }
 
