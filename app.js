@@ -12,8 +12,9 @@ const passport = require('./passport/passport');
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true)
 mongoose.connect('mongodb://localhost:27017/imdollar', {
-  useNewUrlParser: true, 
-  useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
 });
 
 const app = express();
