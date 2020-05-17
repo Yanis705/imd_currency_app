@@ -1,6 +1,8 @@
 document.querySelector(".signup").addEventListener('click', (e)=>{
     let email = document.querySelector('#email').value
     let password = document.querySelector('#pw').value
+    let firstName = document.querySelector('#firstName').value
+    let lastName = document.querySelector('#lastName').value
 
     fetch("http://localhost:3000/users/signup", { 
         method: "POST",
@@ -9,7 +11,9 @@ document.querySelector(".signup").addEventListener('click', (e)=>{
         },
         body: JSON.stringify({
             "email": email,
-            "password": password
+            "password": password,
+            "firstName": firstName,
+            "lastName": lastName
         })
     }).then(response => {
         return response.json();

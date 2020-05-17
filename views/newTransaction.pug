@@ -24,11 +24,11 @@ block content
         input#amount(type='number', placeholder='5' name='amount')
       div.form__group
         label(for='reason') Reason for transaction:
-        select(name='dropDown', id='')
+        select(name='dropDown', id='reason')
           each val in ['Design help' , 'Development help' , 'Feedback', 'Meeting deadlines', 'Other']
             option=val
       div.form__group
         label(for='message') Leave a message:
-        input#email.form-control(type='text', placeholder='Write a message' name='message')
-      button(class='btn' href='transactionCompleted') confirm transaction
-
+        input#message.form-control(type='text', placeholder='Write a message' name='message')
+      button#newTransaction(class='btn' href='transactionCompleted') confirm transaction
+  script(src='javascript/transfer.js')
