@@ -12,7 +12,7 @@ sass2css = function(){
 imagecompressor = function(){
     return src('public/images/*')
     .pipe(imagemin())
-    .pipe(dest('public/images/'));
+    .pipe(dest('public/comp/images/'));
 }
 
 watchSass = function(){
