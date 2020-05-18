@@ -10,7 +10,7 @@
     border: none;
   }
 
-  .item {
+  .transaction {
     flex-direction: row;
     display: grid;
     grid-template-columns: 100px auto 30%;
@@ -20,7 +20,7 @@
     padding-bottom: 10px;
     box-sizing: content-box;
 
-    .date {
+    .transaction__date {
       background-color: $darkest;
       border-radius: 50%;
       width: 75px;
@@ -30,13 +30,13 @@
       align-items: center;
       padding-top: 7px;
 
-      .p--day {
+      .transaction__date--large {
         font-size: 20px;
         line-height: .8;
       }
     }
 
-    .info {
+    .transaction__info {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -46,21 +46,30 @@
         font-weight: 400;
       }
 
-      .p--reason {
+      .transaction__info--small {
         font-size: 14px;
       }
     }
 
-    .amount {
+    .transaction__amount {
       display: flex;
       align-items: center;
       width: 100%;
       justify-content: flex-end;
       padding-right: 20px;
+
+      .transaction__amount--positive{
+        color: $green;
+      }
+
+      .transaction__amount--negative{
+        color: $red;
+      }
     }
+
   }
 
-  .item:last-of-type {
+  .transaction:last-of-type {
     border: none;
   }
 }
@@ -68,19 +77,19 @@
 .leaderboard {
     @extend .transactionHistory;
   
-    .place {
-      @extend .date;
+    .transaction__place {
+      @extend .transaction__date;
     }
   
-    .p--amountTransactions {
-      @extend .p--reason;
+    .transaction__count{
+      @extend .transaction__info--small;
     }
   
-    .item {
+    .transaction {
       border-bottom: 2px solid $darkest;
     }
   }
-
+ 
   .myPlace {
     position: fixed;
     width: 100%;

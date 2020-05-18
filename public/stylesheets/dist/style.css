@@ -153,7 +153,7 @@
   border: none;
 }
 
-.transactionHistory .item, .leaderboard .item {
+.transactionHistory .transaction, .leaderboard .transaction {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -170,7 +170,7 @@
           box-sizing: content-box;
 }
 
-.transactionHistory .item .date, .leaderboard .item .date, .transactionHistory .item .leaderboard .place, .leaderboard .item .place {
+.transactionHistory .transaction .transaction__date, .leaderboard .transaction .transaction__date, .transactionHistory .transaction .leaderboard .transaction__place, .leaderboard .transaction .transaction__place {
   background-color: #202124;
   border-radius: 50%;
   width: 75px;
@@ -190,12 +190,12 @@
   padding-top: 7px;
 }
 
-.transactionHistory .item .date .p--day, .leaderboard .item .date .p--day, .transactionHistory .item .leaderboard .place .p--day, .leaderboard .item .place .p--day {
+.transactionHistory .transaction .transaction__date .transaction__date--large, .leaderboard .transaction .transaction__date .transaction__date--large, .transactionHistory .transaction .leaderboard .transaction__place .transaction__date--large, .leaderboard .transaction .transaction__place .transaction__date--large {
   font-size: 20px;
   line-height: .8;
 }
 
-.transactionHistory .item .info, .leaderboard .item .info {
+.transactionHistory .transaction .transaction__info, .leaderboard .transaction .transaction__info {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -209,15 +209,15 @@
           justify-content: center;
 }
 
-.transactionHistory .item .info p, .leaderboard .item .info p {
+.transactionHistory .transaction .transaction__info p, .leaderboard .transaction .transaction__info p {
   font-weight: 400;
 }
 
-.transactionHistory .item .info .p--reason, .leaderboard .item .info .p--reason, .transactionHistory .item .info .leaderboard .p--amountTransactions, .leaderboard .item .info .p--amountTransactions {
+.transactionHistory .transaction .transaction__info .transaction__info--small, .leaderboard .transaction .transaction__info .transaction__info--small, .transactionHistory .transaction .transaction__info .leaderboard .transaction__count, .leaderboard .transaction .transaction__info .transaction__count {
   font-size: 14px;
 }
 
-.transactionHistory .item .amount, .leaderboard .item .amount {
+.transactionHistory .transaction .transaction__amount, .leaderboard .transaction .transaction__amount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,11 +231,19 @@
   padding-right: 20px;
 }
 
-.transactionHistory .item:last-of-type, .leaderboard .item:last-of-type {
+.transactionHistory .transaction .transaction__amount .transaction__amount--positive, .leaderboard .transaction .transaction__amount .transaction__amount--positive {
+  color: #139F2A;
+}
+
+.transactionHistory .transaction .transaction__amount .transaction__amount--negative, .leaderboard .transaction .transaction__amount .transaction__amount--negative {
+  color: #C73A40;
+}
+
+.transactionHistory .transaction:last-of-type, .leaderboard .transaction:last-of-type {
   border: none;
 }
 
-.leaderboard .item {
+.leaderboard .transaction {
   border-bottom: 2px solid #202124;
 }
 
