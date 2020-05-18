@@ -6,7 +6,7 @@ block content
       img(src="convImages/profile.jpg")
     a(class='header__leaderBoardIcon' href='leaderboard')
       img(src="convImages/trophy.png")
-    p Jane Doe
+    p.fullName
 
   div.wrapper
     div.closeHeader
@@ -15,3 +15,5 @@ block content
       h1 Transaction completed
     a(class='btn' href='/') BACK TO DASHBOARD
   a(class='link' href='newTransaction') NEW TRANSACTION
+  
+  script(src='javascript/currentInfo.js')  

@@ -6,7 +6,7 @@ block content
       img(src="convImages/profile.jpg")
     a(class='header__leaderBoardIcon' href='leaderboard')
       img(src="convImages/trophy.png")
-    p Jane Doe
+    p.fullName
   
   div.wrapper
     div.closeHeader
@@ -32,3 +32,4 @@ block content
         input#message.form-control(type='text', placeholder='Write a message' name='message')
       button#newTransaction(class='btn' href='transactionCompleted') confirm transaction
   script(src='javascript/transfer.js')
+  script(src='javascript/currentInfo.js')  
