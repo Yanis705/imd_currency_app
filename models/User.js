@@ -14,6 +14,10 @@ const User = new Schema({
     balance: {
         type: Number,
         required: true
+    },
+    transferCount: {
+        type: Number,
+        required: true
     }
 })
 
