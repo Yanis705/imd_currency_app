@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  div.header
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
+    p Jane Doe
+
+  div.wrapper
+    div.closeHeader
+      h1 all transactions
+      a(class='close' href="/")
+        div.stripe
+        div.stripe
+        
+    div.transactionHistory
+      
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15
+
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15
+
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15
+
+      a(href='/')
+        div.item
+          div.date
+            p.p--day 25
+            p 04
+          div.info
+            p Yanis Maesschalck
+            p.p--reason Desing help
+          div.amount
+            p.p--plus -$15

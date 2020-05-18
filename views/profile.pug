@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  div.header
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
+    p Jane Doe
+
+  div.wrapper
+    div.closeHeader
+      h1 PROFILE
+      a(class='close' href="/")
+        div.stripe
+        div.stripe
+
+    // change profile information form
+    form(method='POST' action='/signin')
+        h2 CHANGE PROFILE PICTURE
+        div.form__group--profile
+            label(for='picture') Upload picture:
+            input#file(type='file' placeholder="pick file" name='picture')
+        h2 CHANGE PASSWORD
+        div.form__group--profile
+            label(for='oldPassword') Old password:
+            input#pwOld(type='password' name='oldPassword')
+            label(for='newPassword') New password:
+            input#pwNew(type='password' name='newPassword')
+        button.btn(type='submit') Save changes
+  a.logout(class='link' href='login') logout
+  script(src='javascript/profile.js')

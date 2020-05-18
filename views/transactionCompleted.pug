@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.header
+    a(class='header__profilePicture' href='profile')
+      img(src="images/profile.jpg")
+    a(class='header__leaderBoardIcon' href='leaderboard')
+      img(src="/images/trophy.png")
+    p Jane Doe
+
+  div.wrapper
+    div.closeHeader
+    
+    div.completed
+      h1 Transaction completed
+    a(class='btn' href='/') BACK TO DASHBOARD
+  a(class='link' href='newTransaction') NEW TRANSACTION
