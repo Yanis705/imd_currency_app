@@ -7,7 +7,7 @@ const signup = async(req, res, next) => {
     let lastName = req.body.lastName
     //let username = req.body.firstName + " " + req.body.lastName
     let password = req.body.password
-    const user = new User({username: email, firstName: firstName, lastName: lastName, balance: 100, transferscount: 0})
+    const user = new User({username: email, firstName: firstName, lastName: lastName, balance: 100, transferCount: 0})
     await user.setPassword(password)
     await user.save().then(result => {
         console.log(result._id)

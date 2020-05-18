@@ -1,4 +1,4 @@
-function appendBalance() {
+function appendinfo() {
     fetch("http://localhost:3000/api/v1/user/current", {
         method: "get",
         headers: {
@@ -11,9 +11,10 @@ function appendBalance() {
         console.log(json)
 
         document.querySelector(".currentBalanceNumber").innerHTML = "$ " + json.data.user[0].balance
+        document.querySelector(".fullName").innerHTML = json.data.user[0].firstName + " " + json.data.user[0].lastName
 
     }).catch(err => {
         console.log(err);
     })
 }
-window.onload = appendBalance();
+window.onload = appendinfo();

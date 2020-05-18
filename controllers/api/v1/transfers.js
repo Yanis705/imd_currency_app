@@ -1,4 +1,5 @@
 const Transfer = require('../../../models/Transfer');
+const User = require('../../../models/User');
 
 const getAll = (req, res) => {
     Transfer.find({}, (err, docs)=>{
@@ -38,9 +39,13 @@ const create = (req, res) => {
                     let newBalanceSender = actualBalanceSender - transfer.IMDollars;
                     let balanceReceiver = receiver[0].balance;
                     let newBalanceReceiver = balanceReceiver + transfer.IMDollars;
+                    let actualTransferCount = sender[0].transferCount;
+                    let newTransferCount = actualTransferCount + 1;
                     User.findOneAndUpdate({username: req.user.username}, {balance: newBalanceSender}, (err, doc) => {
                     });
                     User.findOneAndUpdate({username: transfer.to}, {balance: newBalanceReceiver}, (err, doc) => {
+                    });
+                    User.findOneAndUpdate({username: req.user.username}, {transferCount: newTransferCount}, (err, doc) => {
                     });
                 } else {
                     console.log("User not found");
