@@ -189,6 +189,15 @@ input[type='file'] {
     font-size: 32px;
     margin-bottom: 50px; }
 
+.wrapper.newTransaction h1 {
+  margin-bottom: 10px; }
+
+.wrapper.newTransaction .error.general {
+  padding-left: 20px; }
+
+.wrapper.newTransaction .form__group:first-of-type, .wrapper.newTransaction .form__group--profile:first-of-type {
+  margin-top: 40px; }
+
 body {
   padding: 50px;
   background-color: #202124; }
