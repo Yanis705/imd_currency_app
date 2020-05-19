@@ -16,7 +16,7 @@ const getAll = (req, res) => {
                 }
             })
         }
-    })
+    }).sort( { balance: -1 } )
 }
 
 const getCurrent = (req, res) => {
