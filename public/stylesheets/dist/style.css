@@ -80,7 +80,7 @@
   .startForm h1 {
     padding-left: 20px;
     margin-bottom: 10px; }
-  .startForm .error {
+  .startForm .error.general {
     padding-left: 20px; }
   .startForm .form__group:first-of-type, .startForm .form__group--profile:first-of-type {
     margin-top: 40px; }
