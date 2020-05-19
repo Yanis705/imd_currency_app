@@ -1,0 +1,1 @@
+fetch("http://localhost:3000/api/v1/transfers",{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(o=>o.json()).then(o=>{console.log(o)}).catch(o=>{console.log("Unauthorized user!"),localStorage.removeItem("token"),window.location="/login"});
