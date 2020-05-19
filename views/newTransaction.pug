@@ -34,6 +34,7 @@ block content
         label(for='message') Leave a message:
         input#message.form-control(type='text', placeholder='Write a message' name='message')
       button#newTransaction(class='btn' href='transactionCompleted') confirm transaction
+
   script(src='http://localhost:3000/primus/primus.js')
-  script(src='javascript/transfer.js')
-  script(src='javascript/currentInfo.js')  
+  script(src='javascript/dist/transfer-min.js')
+  script(src='javascript/dist/currentInfo-min.js')  
