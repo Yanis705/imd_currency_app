@@ -1,3 +1,20 @@
+let url = "http://localhost:3000";
+
+let primus = Primus.connect(url, {
+    reconnect: {
+        max: Infinity,
+        min: 500,
+        retries: 10
+    }
+})
+
+primus.on("data", (json) => {
+    console.log(json)
+    if (json.action === "update") {
+        appendBalance();
+    }
+})
+
 function appendBalance() {
     fetch("http://localhost:3000/api/v1/leaderboard/current", {
         method: "get",

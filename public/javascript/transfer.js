@@ -1,3 +1,13 @@
+let url = "http://localhost:3000";
+
+let primus = Primus.connect(url, {
+    reconnect: {
+        max: Infinity,
+        min: 500,
+        retries: 10
+    }
+})
+
 document.querySelector("#newTransaction").addEventListener('click', (e)=>{
     let to = document.querySelector('#transactionTo').value;
     let IMDollars = document.querySelector('#amount').value;
@@ -20,6 +30,7 @@ document.querySelector("#newTransaction").addEventListener('click', (e)=>{
         return response.json();
     }).then(json => {
         if (json.status === "success") {
+            primus.write({ "action": "update"})
             window.location = '/transactionCompleted';
         }
     })
