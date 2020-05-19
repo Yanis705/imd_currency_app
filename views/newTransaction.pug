@@ -8,20 +8,23 @@ block content
       img(src="convImages/trophy.png")
     p.fullName
   
-  div.wrapper
+  div.wrapper.newTransaction
     div.closeHeader
       h1 NEW TRANSACTION
       a(class='close' href="/")
         div.stripe
         div.stripe
+    p.error.general
 
     form(method='POST' action='/newTransaction')
       div.form__group
         label(for='to') Transaction to:
         input#transactionTo(type='email', placeholder='r-number@student.thomasmore.be' name='to')
+        p.error.to
       div.form__group
         label(for='amount') Amount of IMDollars:
-        input#amount(type='number', placeholder='5' name='amount')
+        input#amount(type='number', placeholder='5' min="0" name='amount')
+        p.error.amount
       div.form__group
         label(for='reason') Reason for transaction:
         select(name='dropDown', id='reason')

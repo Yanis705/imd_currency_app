@@ -31,52 +31,59 @@ const create = (req, res) => {
 
     User.find({username: req.user.username}, (err, sender) =>{
         if(sender[0].balance >= transfer.IMDollars){
-            console.log("Balance OK!");
             User.find({username: transfer.to}, (err, receiver) =>{
                 if(receiver[0] != null){
-                    console.log("User found");
-                    let actualBalanceSender = sender[0].balance;
-                    let newBalanceSender = actualBalanceSender - transfer.IMDollars;
-                    let balanceReceiver = receiver[0].balance;
-                    let newBalanceReceiver = balanceReceiver + transfer.IMDollars;
-                    let actualTransferCount = sender[0].transferCount;
-                    let newTransferCount = actualTransferCount + 1;
-                    User.findOneAndUpdate({username: req.user.username}, {balance: newBalanceSender}, (err, doc) => {
-                    });
-                    User.findOneAndUpdate({username: transfer.to}, {balance: newBalanceReceiver}, (err, doc) => {
-                    });
-                    User.findOneAndUpdate({username: req.user.username}, {transferCount: newTransferCount}, (err, doc) => {
-                    });
+                    if(receiver[0].username == sender[0].username){
+                        res.json({
+                            "status": "error",
+                            "message": "You cannot send money to yourself"
+                        })
+                    } else {
+                        let actualBalanceSender = sender[0].balance;
+                        let newBalanceSender = actualBalanceSender - transfer.IMDollars;
+                        let balanceReceiver = receiver[0].balance;
+                        let newBalanceReceiver = balanceReceiver + transfer.IMDollars;
+                        let actualTransferCount = sender[0].transferCount;
+                        let newTransferCount = actualTransferCount + 1;
+                        User.findOneAndUpdate({username: req.user.username}, {balance: newBalanceSender}, (err, doc) => {
+                        });
+                        User.findOneAndUpdate({username: transfer.to}, {balance: newBalanceReceiver}, (err, doc) => {
+                        });
+                        User.findOneAndUpdate({username: req.user.username}, {transferCount: newTransferCount}, (err, doc) => {
+                        });
+
+                        transfer.save((err, doc) =>{
+                            if(err){
+                                res.json({
+                                    "status": "error",
+                                    "message": "There went something wrong processing this transfer!"
+                                })
+                            }
+                    
+                            if(!err){
+                                res.json({
+                                    "status": "success",
+                                    "data": {
+                                        "transfer": doc
+                                    }
+                                })
+                            }
+                        })
+                    }
                 } else {
-                    console.log("User not found");
-                }
-                if(err){
-                    console.log(err);
+                    res.json({
+                        "status": "error",
+                        "message": "The user you are trying to send IMDollars to was not found"
+                    })
                 }
             });
         } else {
-            console.log("Insufficient balance!");
-        }
-    });
-
-    transfer.save((err, doc) =>{
-        if(err){
             res.json({
                 "status": "error",
-                "message": "could not create this transfer"
+                "message": "Insufficient balance"
             })
         }
-
-        if(!err){
-            res.json({
-                "status": "success",
-                "data": {
-                    "transfer": doc
-                }
-            })
-        }
-    })
-    
+    });
 }
 
 const getOne = (req, res) => {

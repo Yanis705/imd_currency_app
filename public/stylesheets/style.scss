@@ -13,6 +13,7 @@
 @import 'components/leaderboard';
 @import 'components/profile';
 @import 'components/currentBalance';
+@import 'components/newTransaction';
 
 //-----------------Global Styles-----------------//
 
@@ -134,4 +135,10 @@ select {
   @extend %section;
   flex-direction: column;
   padding-top: 30px;
+}
+
+.error{
+  color: $red;
+  font-weight: 500;
+  font-size: 14px;
 }
