@@ -10,7 +10,7 @@ block content
   div.currentBalance
     h1 CURRENT BALANCE
     p.currentBalanceNumber
-    a(class='btn' href='newTransaction') NEW TRANSACTION
+    a(class='btn' href='transfer') NEW TRANSACTION
 
   div.transactionHistory
     a(href='/')
@@ -56,7 +56,7 @@ block content
           p.transaction__amount--positive $15
 
       
-    a(class='btn' href='transactionHistory') FULL HISTORY
+    a(class='btn' href='transfer/history') FULL HISTORY
     script(src='http://localhost:3000/primus/primus.js')
     script(src='javascript/index.js')
     script(src='javascript/currentBalance.js')

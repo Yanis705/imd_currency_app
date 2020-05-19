@@ -10,7 +10,7 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'IMDollar | Profile' });
 });
 
-router.get('/newtransaction', function(req, res, next) {
+router.get('/transfer', function(req, res, next) {
   res.render('newTransaction', { title: 'IMDollar | New transaction' });
 });
 
@@ -18,7 +18,7 @@ router.get('/transactioncompleted', function(req, res, next) {
   res.render('transactionCompleted', { title: 'IMDollar | Transaction completed' });
 });
 
-router.get('/transactionhistory', function(req, res, next) {
+router.get('/transfer/history', function(req, res, next) {
   res.render('transactionHistory', { title: 'IMDollar | Transaction history' });
 });
 
