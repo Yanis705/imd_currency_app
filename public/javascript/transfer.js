@@ -48,6 +48,7 @@ document.querySelector("#newTransaction").addEventListener('click', (e) => {
             return response.json();
         }).then(json => {
             if (json.status === "success") {
+                primus.write({"action": "update"})
                 window.location = '/transactionCompleted';
             } else if (json.status === "error") {
                 document.querySelector('.error.general').innerHTML = json.message;
