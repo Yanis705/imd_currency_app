@@ -20,7 +20,7 @@ const getAll = (req, res) => {
     })
 }
 
-const getHistory = (req, res) => {
+const getLatestTransfers = (req, res) => {
     Transfer.find({ $or: [ { from: req.user.username }, { to: req.user.username } ] }, (err, docs)=>{
         if(err){
             res.json({
@@ -32,7 +32,28 @@ const getHistory = (req, res) => {
             res.json({
                 "status": "success",
                 "data": {
-                    "transfers": docs
+                    "transfers": docs,
+                    "user": req.user
+                }
+            })
+        }
+    }).sort({date: -1}).limit(4)
+}
+
+const transferHistory = (req, res) => {
+    Transfer.find({ $or: [ { from: req.user.username }, { to: req.user.username } ] }, (err, docs)=>{
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "could get all the transfers"
+            })
+        }
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": {
+                    "transfers": docs,
+                    "user": req.user
                 }
             })
         }
@@ -127,4 +148,5 @@ const getOne = (req, res) => {
 module.exports.getAll = getAll;
 module.exports.create = create;
 module.exports.getOne = getOne;
-module.exports.getHistory = getHistory;
+module.exports.getLatestTransfers = getLatestTransfers;
+module.exports.transferHistory = transferHistory;
