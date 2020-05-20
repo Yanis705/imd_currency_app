@@ -14,7 +14,7 @@ const transferSchema = new Schema({
         required: true
     },
     date: {
-        type: String,
+        type: Number,
         required: true
     },
     reason: {

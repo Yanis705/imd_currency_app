@@ -20,12 +20,31 @@ const getAll = (req, res) => {
     })
 }
 
+const getHistory = (req, res) => {
+    Transfer.find({ $or: [ { from: req.user.username }, { to: req.user.username } ] }, (err, docs)=>{
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "could get all the transfers"
+            })
+        }
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": {
+                    "transfers": docs
+                }
+            })
+        }
+    }).sort({date: -1})
+}
+
 const create = (req, res) => {
     let transfer = new Transfer()
     transfer.from = req.user.username
     transfer.to = req.body.to
     transfer.IMDollars = req.body.IMDollars
-    transfer.date = new Date().toLocaleDateString()
+    transfer.date = Date.now();
     transfer.reason = req.body.reason
     transfer.message = req.body.message
 
@@ -106,5 +125,6 @@ const getOne = (req, res) => {
 }
 
 module.exports.getAll = getAll;
-module.exports.create = create
-module.exports.getOne = getOne
+module.exports.create = create;
+module.exports.getOne = getOne;
+module.exports.getHistory = getHistory;
