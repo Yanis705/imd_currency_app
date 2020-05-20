@@ -18,7 +18,7 @@ block content
     form(method='POST' action='/newTransaction')
       div.form__group
         label(for='to') Transaction to:
-        input#transactionTo(type='email', placeholder='r-number@student.thomasmore.be' name='to')
+        input#transactionTo(type='email', placeholder='r-number@student.thomasmore.be' name='to' autocomplete='off')
       div.matchList
       div.form__group
         label(for='amount') Amount of IMDollars:
