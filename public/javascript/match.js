@@ -29,7 +29,7 @@ const output = matches => {
         const info = matches
         .map(
             match => `
-            <div class="autocomplete"><a class="autocomplete__fullName"> ${match.firstName}  ${match.lastName} <span class="autocomplete__username">(${match.username})</span></a></div>
+            <a class="autocomplete__fullName" href=""> ${match.firstName}  ${match.lastName} (<span class="autocomplete__username">${match.username}</span>)</a>
         `)
        .join('');
 
