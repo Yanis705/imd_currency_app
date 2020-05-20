@@ -21,7 +21,7 @@ document.querySelector(".login").addEventListener('click', (e) => {
     }
 
     if (checkLogin) {
-        fetch("http://localhost:3000/users/login", {
+        fetch("/users/login", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

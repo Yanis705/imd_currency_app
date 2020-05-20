@@ -32,7 +32,7 @@ document.querySelector("#newTransaction").addEventListener('click', (e) => {
     }
 
     if (transfer) {
-        fetch("http://localhost:3000/api/v1/transfers", {
+        fetch("/api/v1/transfers", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

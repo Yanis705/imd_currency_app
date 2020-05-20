@@ -35,7 +35,7 @@ document.querySelector("#signup").addEventListener('click', (e) => {
     }
 
     if (register) {
-        fetch("http://localhost:3000/users/signup", {
+        fetch("/users/signup", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

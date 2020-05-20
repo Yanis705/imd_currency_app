@@ -1,5 +1,5 @@
 function appendInfo() {
-    fetch("http://localhost:3000/api/v1/leaderboard/current", {
+    fetch("/api/v1/leaderboard/current", {
         method: "get",
         headers: {
             'Authorization': 'Bearer ' + localStorage.getItem('token'),
