@@ -19,8 +19,9 @@ block content
     form(method='POST' action='/newTransaction')
       div.form__group
         label(for='to') Transaction to:
-        input#transactionTo(type='email', placeholder='r-number@student.thomasmore.be' name='to')
+        input#transactionTo(type='email', placeholder='r-number@student.thomasmore.be' name='to' autocomplete='off')
         p.error.to
+        div.matchList
       div.form__group
         label(for='amount') Amount of IMDollars:
         input#amount(type='number', placeholder='5' min="0" name='amount')
@@ -38,3 +39,5 @@ block content
   script(src='http://localhost:3000/primus/primus.js')
   script(src='javascript/dist/transfer-min.js')
   script(src='javascript/dist/currentInfo-min.js')  
+  script(src='javascript/match.js')
+  script(src='javascript/fillTransfer.js')
