@@ -1,5 +1,5 @@
 if (localStorage.getItem("token") !== null) {
-    fetch("/api/v1/getLatestTransfers", {
+    fetch("/api/v1/transferHistory", {
         method: "get",
         headers: {
             'Content-Type': 'application/json',
@@ -76,15 +76,8 @@ if (localStorage.getItem("token") !== null) {
             parent.appendChild(link);
         })
 
-        let button = document.createElement('a');
-        button.className = "btn";
-        button.setAttribute("href", "transfer/history");
-        button.innerHTML = "FULL HISTORY";
-
-        let parent = document.querySelector(".transactionHistory");
-        parent.appendChild(button);
-
     }).catch(err => {
+        console.log("Unauthorized user!");
         localStorage.removeItem('token');
         window.location = '/login';
     })

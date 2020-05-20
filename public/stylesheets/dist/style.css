@@ -295,7 +295,8 @@ select {
 
 .wrapper {
   flex-direction: column;
-  padding-top: 30px; }
+  padding-top: 30px;
+  margin-bottom: 80px; }
 
 .error {
   color: #C73A40;

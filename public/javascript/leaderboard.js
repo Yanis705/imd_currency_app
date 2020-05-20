@@ -1,10 +1,9 @@
-function appendLeaders() {
+if (localStorage.getItem("token") !== null) {
     fetch("/api/v1/leaderboard", {
         method: "get",
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('token')
-
         },
     }).then(response => {
         return response.json();
@@ -52,10 +51,11 @@ function appendLeaders() {
 
             let parent = document.querySelector(".leaderboard");
             parent.appendChild(divTransaction);
-            
+
         })
     }).catch(err => {
         console.log(err);
     })
+} else {
+    window.location = '/login';
 }
-window.onload = appendLeaders();
