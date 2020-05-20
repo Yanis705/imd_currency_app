@@ -7,6 +7,8 @@ const leaderboardController= require('../../../controllers/api/v1/leaderboard')
 /* /api/v1/index */
 router.get('/transfers', transfersController.getAll);
 
+router.get('/history', transfersController.getHistory);
+
 router.post('/transfers', transfersController.create);
 
 router.get('/transfers/:id', transfersController.getOne);
