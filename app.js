@@ -8,10 +8,11 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiImdollarRouter = require('./routes/api/v1/index');
 const passport = require('./passport/passport');
+const config = require('config');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true)
-mongoose.connect('mongodb://localhost:27017/imdollar', {
+mongoose.connect(config.get('Database.conn'), {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
