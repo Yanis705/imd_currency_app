@@ -1,0 +1,8 @@
+{
+    "Database": {
+        "conn": "mongodb+srv://imdollar-webtech3:k4OeEigaaLab6wND@imdollar-3c3sx.mongodb.net/test?retryWrites=true&w=majority"
+    },
+    "jwt": {
+        "secret": "MyVerySecretWord"
+    }
+}
