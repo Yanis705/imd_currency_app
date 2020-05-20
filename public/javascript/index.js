@@ -69,7 +69,7 @@ fetch("http://localhost:3000/api/v1/history", {
 
     let button = document.createElement('a');
     button.className = "btn";
-    button.setAttribute("href", "transactionHistory");
+    button.setAttribute("href", "transfer/history");
     button.innerHTML = "FULL HISTORY";
 
     let parent = document.querySelector(".transactionHistory");
