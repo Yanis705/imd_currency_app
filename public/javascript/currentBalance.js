@@ -1,3 +1,4 @@
+//let url = "https://imdollar-webtech3.herokuapp.com/";
 let url = "http://localhost:3000";
 
 let primus = Primus.connect(url, {
