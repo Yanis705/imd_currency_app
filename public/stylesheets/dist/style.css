@@ -91,6 +91,11 @@
     border-bottom: 2px solid #202124; }
   .transactionHistory a:last-of-type, .leaderboard a:last-of-type {
     border: none; }
+  .transactionHistory .transaction.noTransaction, .leaderboard .transaction.noTransaction {
+    display: block; }
+    .transactionHistory .transaction.noTransaction p, .leaderboard .transaction.noTransaction p {
+      text-align: center;
+      padding-top: 28px; }
   .transactionHistory .transaction, .leaderboard .transaction {
     flex-direction: row;
     display: grid;
@@ -197,6 +202,19 @@ input[type='file'] {
 
 .wrapper.newTransaction .form__group:first-of-type, .wrapper.newTransaction .form__group--profile:first-of-type {
   margin-top: 40px; }
+
+#transactionTo {
+  margin-bottom: 10px; }
+
+.autocomplete__fullName {
+  display: block; }
+
+.autocomplete__fullName:hover {
+  color: #C73A40;
+  cursor: pointer; }
+  .autocomplete__fullName:hover .autocomplete__username {
+    color: #C73A40;
+    cursor: pointer; }
 
 body {
   padding: 50px;

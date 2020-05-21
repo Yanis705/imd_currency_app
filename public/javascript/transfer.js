@@ -50,7 +50,15 @@ if (localStorage.getItem("token") !== null) {
                 return response.json();
             }).then(json => {
                 if (json.status === "success") {
-                    primus.write({"action" : "update"})
+                    primus.write({
+                        "action": "update"
+                    })
+                    primus.write({
+                        "action": "refreshLatestHistory",
+                    });
+                    primus.write({
+                        "action": "refreshHistory"
+                    })
                     window.location = '/transactionCompleted';
                 } else if (json.status === "error") {
                     document.querySelector('.error.general').innerHTML = json.message;

@@ -1,1 +1,1 @@
-document.querySelector(".matchList").addEventListener("click",e=>{let t=document.querySelector(".autocomplete__username").innerHTML;document.querySelector("#transactionTo").value=t,e.preventDefault()});
+$(document).ready(function(){$("body").on("click",".autocomplete__fullName",function(){let e=$(this).find(".autocomplete__username").html();document.querySelector("#transactionTo").value=e,$(".autocomplete__fullName").remove()})});

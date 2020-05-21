@@ -1,13 +1,31 @@
-.wrapper.newTransaction{
+.wrapper.newTransaction {
     h1 {
         margin-bottom: 10px;
-      }
-    
-    .error.general{
+    }
+
+    .error.general {
         padding-left: 20px;
     }
-    
-    .form__group:first-of-type{
+
+    .form__group:first-of-type {
         margin-top: 40px;
+    }
+}
+
+#transactionTo {
+    margin-bottom: 10px;
+}
+
+.autocomplete__fullName {
+    display: block;
+}
+
+.autocomplete__fullName:hover {
+    color: $red;
+    cursor: pointer;
+
+    .autocomplete__username{
+        color: $red;
+        cursor: pointer;
     }
 }
