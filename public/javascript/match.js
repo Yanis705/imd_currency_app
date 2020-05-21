@@ -1,5 +1,4 @@
 const transactionTo = document.querySelector("#transactionTo");
-const matchList = document.querySelector(".matchList");
 const settings = {
     headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -29,11 +28,13 @@ const output = matches => {
         const info = matches
         .map(
             match => `
-            <a class="autocomplete__fullName" href=""> ${match.firstName}  ${match.lastName} (<span class="autocomplete__username">${match.username}</span>)</a>
+            <p class="autocomplete__fullName"> ${match.firstName}  ${match.lastName} (<span class="autocomplete__username">${match.username}</span>)</p>
         `)
        .join('');
 
-        matchList.innerHTML = info;
+        //matchList.innerHTML = info;
+        $(".autocomplete__fullName").remove();
+        $(info).insertAfter( "#transactionTo" );
     }
 }
 
