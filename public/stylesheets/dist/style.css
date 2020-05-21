@@ -198,6 +198,11 @@ input[type='file'] {
 .wrapper.newTransaction .form__group:first-of-type, .wrapper.newTransaction .form__group--profile:first-of-type {
   margin-top: 40px; }
 
+.matchList {
+  margin-top: 10px; }
+  .matchList .autocomplete__fullName {
+    display: block; }
+
 body {
   padding: 50px;
   background-color: #202124; }
