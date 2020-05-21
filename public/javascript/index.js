@@ -46,6 +46,21 @@ if (localStorage.getItem("token") !== null) {
 
         let appendHistory = (json) => {
 
+            if(json.data.transfers.length === 0){
+
+                let transaction = document.createElement('div');
+                transaction.className = "transaction noTransaction";
+
+                let text = document.createElement('p');
+                text.className = "noTrasactions";
+                text.innerHTML = "You don't have any transactions! Let's make one!";
+
+                transaction.appendChild(text);
+
+                let parent = document.querySelector(".transactionHistory");
+                parent.appendChild(transaction);
+            }
+
             json.data.transfers.forEach(transfer => {
                 let ts = transfer.date;
                 let date_ob = new Date(ts);

@@ -91,6 +91,11 @@
     border-bottom: 2px solid #202124; }
   .transactionHistory a:last-of-type, .leaderboard a:last-of-type {
     border: none; }
+  .transactionHistory .transaction.noTransaction, .leaderboard .transaction.noTransaction {
+    display: block; }
+    .transactionHistory .transaction.noTransaction p, .leaderboard .transaction.noTransaction p {
+      text-align: center;
+      padding-top: 28px; }
   .transactionHistory .transaction, .leaderboard .transaction {
     flex-direction: row;
     display: grid;
