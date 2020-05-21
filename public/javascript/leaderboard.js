@@ -9,15 +9,21 @@ if (localStorage.getItem("token") !== null) {
         return response.json();
     }).then(json => {
         console.log(json)
+       
+        let place = 0;
+       
         json.data.users.forEach(user => {
-            let place = "# 1";
+            
+            place+=1;
+            let placeNumber = "# " + place;
+            //console.log(placeNumber);
             let fullName = user.firstName + " " + user.lastName;
             let transferCount = user.transferCount + " transfers";
             let balance = "$ " + user.balance;
 
             let divTransactionPlace = document.createElement('div');
             divTransactionPlace.className = "transaction__place";
-            divTransactionPlace.insertAdjacentHTML('beforeend', `${place}`);
+            divTransactionPlace.insertAdjacentHTML('beforeend', `${placeNumber}`);
 
             let divTransactionInfo = document.createElement('div');
             divTransactionInfo.className = "transaction__info";
