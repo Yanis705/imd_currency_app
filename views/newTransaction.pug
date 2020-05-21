@@ -34,6 +34,13 @@ block content
       div.form__group
         label(for='message') Leave a message:
         input#message.form-control(type='text', placeholder='Write a message' name='message')
+      div.form__group
+        label(for='slack') Show on slack:
+        input#slack.form-control(
+          type='checkbox'
+          name='slack'
+          checked
+        )
       button#newTransaction(class='btn' href='transactionCompleted') confirm transaction
 
   script(src='http://localhost:3000/primus/primus.js')
@@ -41,3 +48,4 @@ block content
   script(src='javascript/dist/currentInfo-min.js')  
   script(src='javascript/match.js')
   script(src='javascript/fillTransfer.js')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")

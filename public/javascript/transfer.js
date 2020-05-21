@@ -1,6 +1,6 @@
 if (localStorage.getItem("token") !== null) {
-    let url = "https://imdollar-webtech3.herokuapp.com/";
-    //let url = "http://localhost:3000";
+    //let url = "https://imdollar-webtech3.herokuapp.com/";
+    let url = "http://localhost:3000";
 
     let primus = Primus.connect(url, {
         reconnect: {
@@ -51,15 +51,36 @@ if (localStorage.getItem("token") !== null) {
             }).then(json => {
                 if (json.status === "success") {
                     primus.write({"action" : "update"})
+                    if(document.querySelector('#slack').checked){
+                        console.log("checked!");
+                        return fetch("https://hooks.slack.com/services/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",{
+                            method: "POST",
+                            body: JSON.stringify({
+                                'text': `${to} has received ${IMDollars} IMDollars!`,
+                                'attachments': [{ 
+                                    'color': '#202124', 
+                                    'fields': [ 
+                                    {
+                                        'title': 'Reason',
+                                        'value': `${reason}`,
+                                        'short': true
+                                    }
+                                    ]
+                                }]
+                            })
+                        })
+                    };
                     window.location = '/transactionCompleted';
+                    
                 } else if (json.status === "error") {
                     document.querySelector('.error.general').innerHTML = json.message;
                 }
+            }).catch(err => {
+                console.log(err);
             })
         }
-
         e.preventDefault();
-    });
+    })
 } else {
     window.location = '/login';
 }
