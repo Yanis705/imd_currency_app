@@ -52,7 +52,7 @@ if (localStorage.getItem("token") !== null) {
                 if (json.status === "success") {
                     if(document.querySelector('#slack').checked){
                         console.log("checked!");
-                        return fetch("https://hooks.slack.com/services/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",{
+                        return fetch("https://hooks.slack.com/services/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",{
                             method: "POST",
                             body: JSON.stringify({
                                 'text': `${to} has received ${IMDollars} IMDollars!`,
@@ -67,6 +67,8 @@ if (localStorage.getItem("token") !== null) {
                                     ]
                                 }]
                             })
+                        }).then(response => {
+                            window.location = '/transactionCompleted';
                         })
                     };
                     primus.write({
