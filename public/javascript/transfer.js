@@ -50,6 +50,27 @@ if (localStorage.getItem("token") !== null) {
                 return response.json();
             }).then(json => {
                 if (json.status === "success") {
+                    if(document.querySelector('#slack').checked){
+                        console.log("checked!");
+                        return fetch("https://hooks.slack.com/services/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",{
+                            method: "POST",
+                            body: JSON.stringify({
+                                'text': `${to} has received ${IMDollars} IMDollars!`,
+                                'attachments': [{ 
+                                    'color': '#202124', 
+                                    'fields': [ 
+                                    {
+                                        'title': 'Reason',
+                                        'value': `${reason}`,
+                                        'short': true
+                                    }
+                                    ]
+                                }]
+                            })
+                        }).then(response => {
+                            window.location = '/transactionCompleted';
+                        })
+                    };
                     primus.write({
                         "action": "update"
                     })
@@ -60,14 +81,16 @@ if (localStorage.getItem("token") !== null) {
                         "action": "refreshHistory"
                     })
                     window.location = '/transactionCompleted';
+                    
                 } else if (json.status === "error") {
                     document.querySelector('.error.general').innerHTML = json.message;
                 }
+            }).catch(err => {
+                console.log(err);
             })
         }
-
         e.preventDefault();
-    });
+    })
 } else {
     window.location = '/login';
 }

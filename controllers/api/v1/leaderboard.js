@@ -39,5 +39,36 @@ const getCurrent = (req, res) => {
     })
 }
 
+const updateBalance = (req, res) => {
+        let currentUserId = req.user._id;
+        let balanceUpdate;
+        if(req.user.balance <100){
+            balanceUpdate = 100;
+        }
+        if(req.user.balance > 100){
+           balanceUpdate = req.user.balance + 20
+        }
+        User.findByIdAndUpdate({_id: currentUserId}, {balance: balanceUpdate}, (err, doc) => {
+            if(!err){
+                res.json({
+                    "status" : "updated",
+                    "data" : {
+                        "user": doc,
+                        "message": "balance updated"
+                    }
+                })
+            }
+            if(err){
+                res.json({
+                    "status" : "error",
+                    "data" : {
+                        "message": error
+                    }
+                })
+            }
+        })  
+}
+
 module.exports.getAll = getAll
 module.exports.getCurrent = getCurrent
+module.exports.updateBalance = updateBalance

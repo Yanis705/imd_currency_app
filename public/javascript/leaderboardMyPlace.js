@@ -10,7 +10,7 @@ function appendLeaders() {
         return response.json();
     }).then(json => {
         console.log(json)
-            let place = "# 1";
+            let place = "You";
             let fullName = json.data.user[0].firstName + " " + json.data.user[0].lastName;
             let transferCount = json.data.user[0].transferCount + " transfers";
             let balance = "$ " + json.data.user[0].balance;
