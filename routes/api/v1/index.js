@@ -19,4 +19,6 @@ router.get('/leaderboard', leaderboardController.getAll);
 
 router.get('/leaderboard/current', leaderboardController.getCurrent);
 
+router.put('/leaderboard' , leaderboardController.updateBalance);
+
 module.exports = router;
