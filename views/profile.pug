@@ -3,31 +3,38 @@ extends layout
 block content
   div.header
     a(class='header__profilePicture' href='profile')
-      img(src="convImages/profile.jpg")
+      img(src="./convImages/profile.jpg")
     a(class='header__leaderBoardIcon' href='leaderboard')
-      img(src="convImages/trophy.png")
+      img(src="./convImages/trophy.png")
     p.fullName
 
   div.wrapper
     div.closeHeader
-      h1 PROFILE
+      h1 Transaction details
       a(class='close' href="/")
         div.stripe
         div.stripe
 
-    // change profile information form
-    form(method='POST' action='/signin')
-        h2 CHANGE PROFILE PICTURE
-        div.form__group--profile
-            label(for='picture') Upload picture:
-            input#file(type='file' placeholder="pick file" name='picture')
-        h2 CHANGE PASSWORD
-        div.form__group--profile
-            label(for='oldPassword') Old password:
-            input#pwOld(type='password' name='oldPassword')
-            label(for='newPassword') New password:
-            input#pwNew(type='password' name='newPassword')
-        button.btn(type='submit') Save changes
-  a.logout(class='link' href='login') logout
+    div.details
+        div.section
+            div.item
+                p First name:
+                p.firstName
+            div.item
+                p Last name:
+                p.lastName
+        div.section
+            div.item
+                p Email:
+                p.email
+        div.section
+            div.item
+                p Balance:
+                p.balance
+        div.section
+            div.item
+                p Transfer count:
+                p.transfers
+    a.logout(class='btn' href='/login') LOGOUT
   script(src='javascript/dist/profile-min.js')
   script(src='javascript/dist/currentInfo-min.js')
