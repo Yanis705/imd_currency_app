@@ -8,13 +8,11 @@ const settings = {
 const searchUsers = async searchText => {
     const res = await fetch("../../api/v1/leaderboard", settings)
     const users = await res.json();
-    //console.log(users)
 
     let matches = users.data.users.filter(user => {
         const regex = new RegExp(`^${searchText}`, 'gi');
         return user.firstName.match(regex) || user.lastName.match(regex);
     });
-    //console.log(matches);
     //empty array when input is empty
     if(searchText.length === 0){
         matches = [];
