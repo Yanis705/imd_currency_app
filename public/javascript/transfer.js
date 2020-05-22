@@ -52,7 +52,7 @@ if (localStorage.getItem("token") !== null) {
                 if (json.status === "success") {
                     if (document.querySelector('#slack').checked) {
                         console.log("checked!");
-                        return fetch("https://hooks.slack.com/services/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", {
+                        return fetch("https://hooks.slack.com/services/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", {
                             method: "POST",
                             body: JSON.stringify({
                                 'text': `${to} has received ${IMDollars} IMDollars!`,
