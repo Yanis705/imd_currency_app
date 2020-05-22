@@ -10,6 +10,15 @@
     border: none;
   }
 
+  .transaction.noTransaction{
+    display: block;
+
+    p{
+      text-align: center;
+      padding-top: 28px;
+    }
+  }
+
   .transaction {
     flex-direction: row;
     display: grid;

@@ -50,6 +50,7 @@ if (localStorage.getItem("token") !== null) {
                 return response.json();
             }).then(json => {
                 if (json.status === "success") {
+<<<<<<< HEAD
                     primus.write({"action" : "update"})
                     if(document.querySelector('#slack').checked){
                         console.log("checked!");
@@ -70,6 +71,17 @@ if (localStorage.getItem("token") !== null) {
                             })
                         })
                     };
+=======
+                    primus.write({
+                        "action": "update"
+                    })
+                    primus.write({
+                        "action": "refreshLatestHistory",
+                    });
+                    primus.write({
+                        "action": "refreshHistory"
+                    })
+>>>>>>> master
                     window.location = '/transactionCompleted';
                     
                 } else if (json.status === "error") {
