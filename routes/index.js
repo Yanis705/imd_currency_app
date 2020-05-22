@@ -22,8 +22,8 @@ router.get('/transfer/history', function(req, res, next) {
   res.render('transactionHistory', { title: 'IMDollar | Transaction history' });
 });
 
-router.get('/transactionDetails', function(req, res, next) {
-  res.render('transactionDetails', { title: 'IMDollar | Transaction details' });
+router.get('/transactionDetails/:id', function(req, res, next) {
+  res.render('transactionDetails', { title: 'IMDollar | Transaction details', id: req.params.id });
 });
 
 router.get('/leaderboard', function(req, res, next) {

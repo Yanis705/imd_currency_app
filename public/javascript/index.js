@@ -71,9 +71,10 @@ if (localStorage.getItem("token") !== null) {
                 let receiver = transfer.to;
                 let reason = transfer.reason;
                 let amount = transfer.IMDollars;
+                let id = transfer._id;
 
                 let link = document.createElement('a');
-                link.setAttribute("href", "/");
+                link.setAttribute("href", "/transactiondetails/" + id);
 
                 let transaction = document.createElement('div');
                 transaction.className = "transaction";

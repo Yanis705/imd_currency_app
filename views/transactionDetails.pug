@@ -3,9 +3,9 @@ extends layout
 block content
   div.header
     a(class='header__profilePicture' href='profile')
-      img(src="convImages/profile.jpg")
+      img(src="./../convImages/profile.jpg")
     a(class='header__leaderBoardIcon' href='leaderboard')
-      img(src="convImages/trophy.png")
+      img(src="./../convImages/trophy.png")
     p.fullName
 
   div.wrapper
@@ -19,20 +19,21 @@ block content
         div.section
             div.item
                 p Transaction from:
-                p Jane Doe
+                p.from
             div.item
                 p Transaction to:
-                p Yanis De Maesschalck
+                p.to
         div.section
             div.item
                 p Amount:
-                p $10
+                p.amount
         div.section
             div.item
                 p Reason for transaction:
-                p Feedback
+                p.reason
         div.section
             div.item
                 p Description:
-                p Lorem ipsum dolor sir amet lorem ipsum dolor sir amet lorem ipsum dolor sir amet
-    script(src='javascript/dist/currentInfo-min.js')  
+                p.description
+    script(src='./../javascript/dist/currentInfo-min.js')
+    script(src='./../javascript/dist/transactionDetails-min.js')  
