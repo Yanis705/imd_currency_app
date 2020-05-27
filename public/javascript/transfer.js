@@ -1,5 +1,3 @@
-const fetchNode = require('node-fetch');
-
 if (localStorage.getItem("token") !== null) {
     let url = "https://imdollar-webtech3.herokuapp.com";
     //let url = "http://localhost:3000";
@@ -55,10 +53,8 @@ if (localStorage.getItem("token") !== null) {
                     if (document.querySelector('#slack').checked) {
                         console.log("checked!");
                         
-                        const body = { a: 1 };
- 
-                        fetchNode('https://hooks.slack.com/services/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', {
-                                method: 'post',
+                        return fetch('https://imdollar-webtech3.herokuapp.com/api/v1/webhooks', {
+                                method: 'get',
                                 body: JSON.stringify({
                                     'text': `${to} has received ${IMDollars} IMDollars!`,
                                     'attachments': [{
