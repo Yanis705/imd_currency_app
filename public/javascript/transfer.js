@@ -52,21 +52,20 @@ if (localStorage.getItem("token") !== null) {
                 if (json.status === "success") {
                     if (document.querySelector('#slack').checked) {
                         console.log("checked!");
-                        
-                        return fetch('https://imdollar-webtech3.herokuapp.com/api/v1/webhooks', {
-                                method: 'get',
-                                body: JSON.stringify({
-                                    'text': `${to} has received ${IMDollars} IMDollars!`,
-                                    'attachments': [{
-                                        'color': '#202124',
-                                        'fields': [{
-                                            'title': 'Reason',
-                                            'value': `${reason}`,
-                                            'short': true
-                                        }]
+                        return fetch("https://hooks.slack.com/services/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", {
+                            method: "POST",
+                            body: JSON.stringify({
+                                'text': `${to} has received ${IMDollars} IMDollars!`,
+                                'attachments': [{
+                                    'color': '#202124',
+                                    'fields': [{
+                                        'title': 'Reason',
+                                        'value': `${reason}`,
+                                        'short': true
                                     }]
+                                }]
                             })
-                            .then(response => {
+                        }).then(response => {
                             primus.write({
                                 "action": "update"
                             })
@@ -78,7 +77,7 @@ if (localStorage.getItem("token") !== null) {
                             })
                             window.location = '/transactionCompleted';
                         })
-                    });
+                    };
                     primus.write({
                         "action": "update"
                     })
