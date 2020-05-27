@@ -1,8 +1,8 @@
 const fetchNode = require('node-fetch');
 
 if (localStorage.getItem("token") !== null) {
-    //let url = "https://imdollar-webtech3.herokuapp.com";
-    let url = "http://localhost:3000";
+    let url = "https://imdollar-webtech3.herokuapp.com";
+    //let url = "http://localhost:3000";
 
     let primus = Primus.connect(url, {
         reconnect: {
@@ -82,7 +82,7 @@ if (localStorage.getItem("token") !== null) {
                             })
                             window.location = '/transactionCompleted';
                         })
-                    };
+                    });
                     primus.write({
                         "action": "update"
                     })
